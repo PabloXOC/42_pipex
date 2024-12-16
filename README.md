@@ -56,16 +56,6 @@ Use the following commands for cleanup:
 - `make fclean`: Remove object files and the compiled library.
 - `make re`: Rebuild the library from scratch.
 
-## Features  
-
-- **Pipeline Behavior**: Processes data from `file1` through `cmd1` and `cmd2`, then writes the result to `file2`.  
-- **Error Handling**: Thoroughly handles all errors, ensuring no crashes (e.g., segmentation faults, double frees).  
-- **Memory Management**: Ensures the program is free from memory leaks.  
-- **Shell-Like Behavior**: Handles edge cases similarly to the shell pipeline:
-
-```bash
-< file1 cmd1 | cmd2 > file2  
-```  
 
 
 ## Error Handling  
@@ -73,7 +63,6 @@ Use the following commands for cleanup:
 The program checks and handles the following errors:  
 
 - Invalid file names or permissions for `file1` or `file2`.  
-- Missing or invalid commands for `cmd1` or `cmd2`.  
-- Errors in system calls such as `pipe()`, `fork()`, `execve()`, or `dup2()`.  
+- Missing or invalid commands for `cmd1` or `cmd2`.
 
 If an error occurs, the program exits cleanly with an appropriate error message.  
